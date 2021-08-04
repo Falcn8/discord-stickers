@@ -8,23 +8,19 @@
     const url = 'https://api.github.com/repos/falcn8/discord-stickers/contents/img';
     req.open("GET", url);
     req.send();
-    var element = document.createElement("SPAN");
-    element.style.fontFamily = "Roboto"
-    var res = req.responseText.replace('[', '');
-    res = res.replace(']', '');
-    element.innerText = res;
-    document.body.appendChild(element);
-//     req.onreadystatechange = (e) => {
-//       var element = document.createElement("SPAN");
-//       element.style.fontFamily = "Roboto"
-//       var res = req.responseText.replace('[', '');
-//       res = res.replace(']', '');
-//   //     var obj = JSON.parse(res)
-//   //     var pretty = JSON.stringify(obj, null, 4);
-//       element.innerText = res;
-//       document.body.appendChild(element);
-//   //     console.log(obj)
-//     }
+    req.onreadystatechange = (e) => {
+      if (req.readyState === XMLHttpRequest.DONE) {
+        var element = document.createElement("SPAN");
+        element.style.fontFamily = "Roboto"
+        var res = req.responseText.replace('[', '');
+        res = res.replace(']', '');
+    //     var obj = JSON.parse(res)
+    //     var pretty = JSON.stringify(obj, null, 4);
+        element.innerText = res;
+        document.body.appendChild(element);
+    //     console.log(obj)
+      }
+    }
   </script>
 </head>
 <body></body>
