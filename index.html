@@ -15,7 +15,6 @@
         var res = req.responseText
         var obj = JSON.parse(res)
         var pretty = JSON.stringify(obj, null, 4);
-        pretty = pretty.replace(" ", "&nbsp;");
         element.innerText = pretty;
         document.body.appendChild(element);
         console.log(pretty)
