@@ -14,11 +14,11 @@
         element.style.fontFamily = "Roboto"
         var res = req.responseText.replace('[', '');
         res = res.replace(']', '');
-    //     var obj = JSON.parse(res)
-    //     var pretty = JSON.stringify(obj, null, 4);
+        var obj = JSON.parse(res)
+        var pretty = JSON.stringify(obj, null, 4);
         element.innerText = res;
         document.body.appendChild(element);
-    //     console.log(obj)
+        console.log(obj)
       }
     }
   </script>
