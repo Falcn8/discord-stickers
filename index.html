@@ -6,7 +6,7 @@
 
   req.onreadystatechange = (e) => {
     var element = document.createElement("SPAN");
-    element.style.property = "font-family: Arial"
+    element.style.font = "Arial"
     var res = req.responseText.replace('[', '');
     res = res.replace(']', '');
 //     var obj = JSON.parse(res)
