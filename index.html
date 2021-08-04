@@ -6,7 +6,10 @@
 
   req.onreadystatechange = (e) => {
     var element = document.createElement("P");
-    element.innerText = req.responseText;
+    req.responseText = req.responseText.replace('[', '');
+    req.responseText = req.responseText.replace(']', '');
+    var pretty = JSON.stringify(req.responseText, null, 4);
+    element.innerText = pretty;
     document.body.appendChild(element);
   }
 </script>
