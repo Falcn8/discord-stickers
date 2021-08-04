@@ -5,7 +5,7 @@
   req.send();
 
   req.onreadystatechange = (e) => {
-    var element = document.createElement("SPAN");
+    var element = document.createElement("DIV");
     var res = req.responseText.replace('[', '');
     res = res.replace(']', '');
     var pretty = JSON.stringify(JSON.parse(res), null, 4);
