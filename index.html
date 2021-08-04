@@ -5,12 +5,14 @@
   req.send();
 
   req.onreadystatechange = (e) => {
-    var element = document.createElement("DIV");
+    var element = document.createElement("SPAN");
     var res = req.responseText.replace('[', '');
     res = res.replace(']', '');
-    var pretty = JSON.stringify(JSON.parse(res), null, 4);
-    element.innerText = pretty;
+    var obj = JSON.parse(res)
+    var pretty = JSON.stringify(obj, null, 4);
+    element.innerText = res;
     document.body.appendChild(element);
+    console.log(obj)
   }
 </script>
 <body></body>
