@@ -13,13 +13,10 @@
         var element = document.createElement("SPAN");
         element.style.fontFamily = "Roboto"
         var res = req.responseText
-//         var res = req.responseText.replace('[', '{');
-//         res = res.replace(']', '}');
         var obj = JSON.parse(res)
         var pretty = JSON.stringify(obj, null, 4);
-        element.innerText = res;
+        element.innerText = pretty;
         document.body.appendChild(element);
-        console.log(obj)
       }
     }
   </script>
