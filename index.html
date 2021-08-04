@@ -1,14 +1,16 @@
 <head>
   <title>Discord Stickers API</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   <script>
     const req = new XMLHttpRequest();
     const url = 'https://api.github.com/repos/falcn8/discord-stickers/contents/img';
     req.open("GET", url);
     req.send();
-
     req.onreadystatechange = (e) => {
       var element = document.createElement("SPAN");
-      element.style.font = "Arial"
+      element.style.font = "Roboto"
       var res = req.responseText.replace('[', '');
       res = res.replace(']', '');
   //     var obj = JSON.parse(res)
