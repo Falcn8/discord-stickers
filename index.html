@@ -5,11 +5,11 @@
   req.send();
 
   req.onreadystatechange = (e) => {
-    var element = document.createElement("P");
+    var element = document.createElement("SPAN");
     var res = req.responseText.replace('[', '');
     res = res.replace(']', '');
-//     var pretty = JSON.stringify(req.responseText, null, 4);
-    element.innerText = res;
+    var pretty = JSON.stringify(JSON.parse(res), null, 4);
+    element.innerText = pretty;
     document.body.appendChild(element);
   }
 </script>
