@@ -8,8 +8,8 @@
     var element = document.createElement("P");
     req.responseText = req.responseText.replace('[', '');
     req.responseText = req.responseText.replace(']', '');
-    var pretty = JSON.stringify(req.responseText, null, 4);
-    element.innerText = pretty;
+//     var pretty = JSON.stringify(req.responseText, null, 4);
+    element.innerText = req.responseText;
     document.body.appendChild(element);
   }
 </script>
