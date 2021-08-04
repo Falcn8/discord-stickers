@@ -1,0 +1,13 @@
+<script>
+  const req = new XMLHttpRequest();
+  const url = 'https://api.github.com/repos/falcn8/discord-stickers/contents/img';
+  req.open("GET", url);
+  req.send();
+
+  req.onreadystatechange = (e) => {
+    var element = document.createElement("P");
+    element.innerText = req.responseText;
+    document.body.appendChild(element);
+  }
+</script>
+<body></body>
