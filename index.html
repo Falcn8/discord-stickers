@@ -14,6 +14,16 @@
         element.style.fontFamily = "Roboto"
         var res = req.responseText
         var obj = JSON.parse(res)
+        for (var key in p) {
+          if (p.hasOwnProperty(key)) {
+            const req1 = new XMLHttpRequest();
+            const url = 'https://api.github.com/repos/falcn8/discord-stickers/contents/'+obj[key]["path"];
+            req1.open("GET", url);
+            req1.onreadystatechange = (e) => {
+              console.log(req1.responseText);
+            }
+          }
+        }
         var pretty = JSON.stringify(obj, null, 4);
         element.innerText = pretty;
         document.body.appendChild(element);
