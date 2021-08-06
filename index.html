@@ -19,6 +19,7 @@
             const req1 = new XMLHttpRequest();
             const url = 'https://api.github.com/repos/falcn8/discord-stickers/contents/'+obj[key]["path"];
             req1.open("GET", url);
+            console.log(req1.responseText);
             req1.onreadystatechange = (e) => {
               console.log(req1.responseText);
               element.innerText = req1.responseText;
