@@ -21,6 +21,7 @@
             req1.open("GET", url);
             console.log(req1.responseText);
             req1.onreadystatechange = (e) => {
+              console.log("A")
               console.log(req1.responseText);
               element.innerText = req1.responseText;
               document.body.appendChild(element);
