@@ -20,6 +20,7 @@
             const url = 'https://api.github.com/repos/falcn8/discord-stickers/contents/'+obj[key]["path"];
             req1.open("GET", url);
             req1.onreadystatechange = (e) => {
+              console.log(req1.responseText);
               element.innerText = req1.responseText;
               document.body.appendChild(element);
             }
