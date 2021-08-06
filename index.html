@@ -16,18 +16,18 @@
         var obj = JSON.parse(res)
         for (var key in obj) {
           if (obj.hasOwnProperty(key)) {
-            console.log("LOOP");
             const req1 = new XMLHttpRequest();
             const url = 'https://api.github.com/repos/falcn8/discord-stickers/contents/'+obj[key]["path"];
             req1.open("GET", url);
             req1.onreadystatechange = (e) => {
-              if (req.readyState === XMLHttpRequest.DONE) element.innerText = req1.responseText;
+              element.innerText = req1.responseText;
+              document.body.appendChild(element);
             }
           }
         }
         var pretty = JSON.stringify(obj, null, 4);
 //         element.innerText = pretty;
-        document.body.appendChild(element);
+//         document.body.appendChild(element);
 //         console.log(pretty)
       }
     }
